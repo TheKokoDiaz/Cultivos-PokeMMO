@@ -242,7 +242,7 @@ function Abrir_Ventana(){
 
 function Cerrar_Ventana(){
     var wdn = document.getElementById('Seleccion_bayas');
-    wdn.style.top = '-120%';
+    wdn.style.top = '-200%';
     setTimeout(Ocultar_Ventana, 200, 'none');
 }
 

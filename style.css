@@ -25,10 +25,11 @@ body{
     font-size: 35px;
     color: white;
     
-    width: 97.6%;
     border-radius: 5px;
     border: 4px solid var(--W);
     background-color: var(--A);
+    
+    width: 99.5%;
 }
 
 #espacio1{
@@ -42,13 +43,13 @@ body{
     margin-top: 20px;
     padding: 2.5px 2%;
     position: relative;
-    width: clamp(0px, 94%, 950px);
-    
+
     font-size: 20px;
     text-align: justify;
     background-color: rgb(255, 255, 255, 1);
     border: 2px solid rgb(255, 255, 255);
 
+    width: clamp(0px, 96%, 950px);
 }
 
 .berrie_table{
@@ -114,6 +115,11 @@ td{
     left: 15%;
 }
 
+#Btn_Seleccionar{
+    font-size: 20px;
+    font-family: 'Candara';
+}
+
 #Close_Btn{
     position: absolute;
     font-size: 30px;
@@ -139,7 +145,7 @@ td{
 #Seleccion_bayas{
     left: 4%;
     right: 4%;
-    top: -120%;
+    top: -200%;
     width: 90%;
     height: 96.5%;
     position: fixed;
@@ -187,4 +193,354 @@ td{
     0%{background-color: rgb(255, 200, 50);}
     50%{background-color: rgb(255, 100, 50);}
     100%{background-color: rgb(255, 200, 50);}
+}
+
+#Creditos{
+    border: 2px dashed rgba(219, 11, 1, 86%);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    border-radius: 5px;
+    background-color: rgba(219, 11, 1, 10%);
+}
+
+#Creditos_Titulo{
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(219, 11, 1, 86%);
+    text-align: center;
+}
+
+#Creditos_Prop{
+    background-color: rgba(255, 255, 255, 0.0);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0px;
+    width: 19%;
+    height: 100%;
+    float: left; 
+}
+
+#Creditos_Img{
+    width: 60%;
+}
+
+#Creditos_Cuerpo{
+    float: left;
+    width: 79%;
+}
+
+
+
+@media screen and (max-width: 768px){
+    body{
+        background-color: var(--C);
+        font-family: 'Candara';
+    }
+    
+    #encabezado{
+        font-size: 20px;
+        
+        border-radius: 5px;
+        border: 2px solid var(--W);
+        background-color: var(--A);
+        
+        width: 100%;
+    }
+    
+    #espacio1{
+        width: 0px;
+    }
+    
+    #cuerpo{
+        margin-top: 10px;
+        padding: 0px 5px;
+    
+        font-size: 14px;
+        border: 1px solid rgb(255, 255, 255);
+        width: 97%;
+        border-radius: 5px;
+    }
+    
+    .berrie_table{
+        width: 40%;
+    }
+    
+    .seed_table{
+        width: 15px;
+    }
+    
+    .baya_icon{
+        width: 30%;
+        padding: 10px 0px;
+    }
+    
+    table{
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 1);
+        border-radius: 5px;
+    }
+    
+    td{
+        width: auto;
+        padding: 1px;
+        text-align: center;
+        border: 0px solid black;
+    }
+    
+    #filtro{
+        background-color: var(--C);
+        width: 100%;
+    }
+    
+    .filt_sub{
+        background-color: var(--A);
+        font-weight: normal;
+        color: var(--W);
+    }
+    
+    #calculadora{
+        background-color: var(--E);
+    }
+    
+    .calc_sub{
+        width: 33%;
+        border: 1px solid black;
+        background-color: var(--D);
+        font-weight: normal;
+    
+        color: var(--W);
+    }
+    
+    .calc_td{
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    #Btn_Seleccionar{
+        font-size: 14px;
+    }
+    
+    #Close_Btn{
+        font-size: 15px;
+        border-radius: 50%;
+    }
+    
+    #Tabla_Seleccion{
+        height: 100%; 
+        border-radius: 5px;
+        background-color: rgb(0, 0, 255); 
+    }
+    
+    #Seleccion_bayas{
+        left: 1px;
+        top: -200%;
+        width: 99%;
+        height: 97.5%;
+        position: fixed;
+        border-radius: 5px;
+    
+        font-size: 15px;
+        font-weight: bold;
+        border: 0px solid var(--W);
+        background-color: var(--W);
+    }
+    
+    .Seleccion_bayas_img{
+        width: clamp(5px, 50%, 35px);
+    }
+
+    #Creditos{
+        border: 1px dashed rgba(219, 11, 1, 86%);
+        padding: 0px 5px;
+        border-radius: 5px;
+    }
+
+    #Creditos_Prop{
+        background-color: rgba(255, 255, 255, 0.0);
+        font-weight: bold;
+        font-size: 15px;
+        text-align: center;
+        margin: 10px 5px;
+        width: 100%;
+        height: 100%;
+        float: left; 
+    }
+
+    #Creditos_Titulo{
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    #Creditos_Img{
+        width: clamp(1px, 40%, 160px);
+        border-radius: 50%;
+    }
+
+    #Creditos_Cuerpo{
+        text-align: justify;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1239px){
+    body{
+        background-color: var(--C);
+        font-family: 'Candara';
+    }
+    
+    #encabezado{
+        font-size: 26px;
+        
+        border-radius: 5px;
+        border: 3px solid var(--W);
+        background-color: var(--A);
+        
+        width: 98%;
+    }
+    
+    #espacio1{
+        width: 0px;
+    }
+    
+    #cuerpo{
+        margin-top: 10px;
+        padding: 0px 5px;
+    
+        font-size: 17px;
+        border: 1px solid rgb(255, 255, 255);
+        width: 99%;
+        border-radius: 5px;
+    }
+    
+    .berrie_table{
+        width: 35%;
+    }
+    
+    .seed_table{
+        width: 20px;
+    }
+    
+    .baya_icon{
+        width: 20%;
+        padding: 5px 0px;
+    }
+    
+    table{
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 1);
+        border-radius: 5px;
+    }
+    
+    td{
+        width: auto;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid black;
+    }
+    
+    #filtro{
+        background-color: var(--C);
+        width: 100%;
+    }
+    
+    .filt_sub{
+        background-color: var(--A);
+        font-weight: bold;
+        color: var(--W);
+    }
+    
+    #calculadora{
+        background-color: var(--E);
+    }
+    
+    .calc_sub{
+        width: 33%;
+        border: 1px solid black;
+        background-color: var(--D);
+        font-weight: bold;
+    
+        color: var(--W);
+    }
+    
+    .calc_td{
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    #Btn_Seleccionar{
+        font-size: 16px;
+    }
+    
+    #Close_Btn{
+        font-size: 25px;
+        border-radius: 25%;
+    }
+    
+    #Tabla_Seleccion{
+        height: 100%; 
+        border-radius: 5px;
+        background-color: rgb(0, 0, 255); 
+    }
+    
+    #Seleccion_bayas{
+        left: 10%;
+        top: -200%;
+        width: 80%;
+        height: 97.5%;
+        position: fixed;
+        border-radius: 5px;
+    
+        font-size: 18px;
+        font-weight: bold;
+        border: 2px solid var(--W);
+        background-color: var(--W);
+    }
+    
+    .Seleccion_bayas_img{
+        width: clamp(5px, 50%, 50px);
+    }
+
+    #Creditos{
+        border: 2px dashed rgba(219, 11, 1, 86%);
+        padding: 0px 5px;
+        border-radius: 2px;
+    }
+
+    #Creditos_Prop{
+        background-color: rgba(255, 255, 255, 0.0);
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+        margin: 10px 5px;
+        width: 100%;
+        height: 100%;
+        float: left; 
+    }
+
+    #Creditos_Titulo{
+        font-weight: bold;
+        font-size: 22px;
+    }
+    
+    #Creditos_Img{
+        width: clamp(1px, 40%, 160px);
+        border-radius: 50%;
+    }
+
+    #Creditos_Cuerpo{
+        text-align: justify;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1240px){
+    #cuerpo{
+        width: 96%;
+    }
+
+    #espacio1{
+        width: 5px;
+    }
 }

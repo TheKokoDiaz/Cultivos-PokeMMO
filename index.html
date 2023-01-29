@@ -61,7 +61,7 @@
         
         <table id="calculadora">
             <tr>
-                <td class="calc_sub">Escoje el tipo de baya que va a cosechar</td>
+                <td class="calc_sub">Escoje la categoria de baya a cosechar</td>
                 <td class="calc_sub">Tiempo de Crecimiento</td>
                 <td class="calc_sub">Hora a la que estará lista</td>
             </tr>
@@ -69,7 +69,7 @@
                 <td class="calc_td">
                     <div id="baya_calc"></div>
                     <div id="uso_baya"></div>
-                    <button onclick="Abrir_Ventana()" style="font-size: 20px; font-family: Candara;">Seleccionar</button>
+                    <button onclick="Abrir_Ventana()" id="Btn_Seleccionar">Seleccionar</button>
                 </td>
                 <td id="baya_crecimiento" class="calc_td"></td>
                 <td id="baya_lista" class="calc_td"></td>
@@ -191,15 +191,15 @@
             </tr>
         </table>
         
-        <br><div style="border: 2px dashed rgba(219, 11, 1, 86%); display: flex; flex-direction: column; padding: 10px 0px; border-radius: 5px; background-color: rgba(219, 11, 1, 10%);;">
-            <p style="font-weight: bold; font-size: 24px; color: rgba(219, 11, 1, 86%);">&nbsp; Está página fue creada y programada por:</p>
+        <br><div id="Creditos">
+            <p id="Creditos_Titulo">Está página fue creada y programada por:</p>
             <div>
-                <div style="background-color: rgba(255, 255, 255, 0.0); font-weight: bold; font-size: 30px; text-align: center; margin: 10px 0px; width: 19%; height: 100%; float: left; ">
-                    <img src="FotoCanal.png" style="width: 60%;">
+                <div id="Creditos_Prop">
+                    <img src="FotoCanal.png" id="Creditos_Img">
                     <br>El Koko Díaz
                 </div>
                 
-                <div style="float: left; width: 79%;">
+                <div id="Creditos_Cuerpo">
                     Soy un joven que le encanta jugar videojuegos, programar y dibujar animaciones.
 
                     <p>
@@ -210,7 +210,7 @@
                         Espero que está página, las herramientas y la información te sean de utilidad y que así sembrar cultivos en PokeMMO sea más fácil y sencillo. Las estaré actualizando en caso de que sea necesario.
                     </p>
                     
-                    <p style="margin: 0px 0px 0px 5px;">
+                    <p>
                         Nota: Aún faltan agregar bayas, las estaré añadiendo a futuro, solo puse las más demandadas por el Servidor de Comercio.
                     </p><br>
                 </div>
