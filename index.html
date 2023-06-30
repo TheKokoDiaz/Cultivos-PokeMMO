@@ -9,7 +9,7 @@
 
     <link href="style.css" rel="stylesheet" type="text/css" media="screen">
     <link rel="shortcut icon" href="assets/LucarioFachas.png">
-    <script src="script.js"></script>
+
 </head>
 <body>
     <!-- #region Encabezado Principal -->
@@ -22,55 +22,57 @@
     <!-- #region Tabla de Selección de bayas -->
     <!-- Es el menu desplegable que aparece al seleccionar una baya desde el filtro -->
     <div id="Seleccion_bayas">
-        <button id="Close_Btn" onclick="Cerrar_Ventana()">❌</button>
+        <div id="Close_Btn" onclick="Cerrar_Ventana()"><img src="assets/cancelar.png" alt="X" draggable="false"></div>
         <table id="Tabla_Seleccion">
             <tr>
-                <td style="width: 15%;" class="Celda_Seleccion">Uso</td>
-                <td style="width: 85%" class="Celda_Seleccion">Bayas pertenecientes</td>
+                <td style="width: 15%;" class="Titulo">Uso</td>
+                <td style="width: 85%" class="Titulo">Bayas pertenecientes</td>
             </tr>
             <tr>
                 <!-- Botones para mostrar las bayas que dan semillas -->
                 <td id="Semillas_1" onmouseover="ChangeColor('Semillas')" onmouseleave="ReturnColor('Semillas')" onclick="CalcularTime('Semillas')">Semillas</td>
                 <td id="Semillas_2" onmouseover="ChangeColor('Semillas')" onmouseleave="ReturnColor('Semillas')" onclick="CalcularTime('Semillas')">
-                    <img src="assets/baya_atania.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_meloc.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_perasi.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_safre.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_zreza.png" class="Seleccion_bayas_img"> 
+                    <img src="assets/baya_atania.png"> 
+                    <img src="assets/baya_meloc.png"> 
+                    <img src="assets/baya_perasi.png"> 
+                    <img src="assets/baya_safre.png"> 
+                    <img src="assets/baya_zreza.png"> 
                 </td>
             </tr>
             <tr>
                 <!-- Botones para mostrar las bayas que cambian los EV's -->
                 <td id="Evs_1" onmouseover="ChangeColor('Evs')" onmouseleave="ReturnColor('Evs')" onclick="CalcularTime('Evs')">Ev's</td>
                 <td  id="Evs_2" onmouseover="ChangeColor('Evs')" onmouseleave="ReturnColor('Evs')" onclick="CalcularTime('Evs')">
-                    <img src="assets/baya_algama.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_grana.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_ispero.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_meluce.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_tamate.png" class="Seleccion_bayas_img"> 
-                    <img src="assets/baya_uvav.png" class="Seleccion_bayas_img"> 
+                    <img src="assets/baya_algama.png"> 
+                    <img src="assets/baya_grana.png"> 
+                    <img src="assets/baya_ispero.png"> 
+                    <img src="assets/baya_meluce.png"> 
+                    <img src="assets/baya_tamate.png"> 
+                    <img src="assets/baya_uvav.png"> 
                 </td>
             </tr>
             <tr>
                 <!-- Botones para mostrar solo las bayas que suben los PP's -->
                 <td id="PPs_1" onmouseover="ChangeColor('PPs')" onmouseleave="ReturnColor('PPs')" onclick="CalcularTime('PPs')">PP's</td>
-                <td id="PPs_2" onmouseover="ChangeColor('PPs')" onmouseleave="ReturnColor('PPs')" onclick="CalcularTime('PPs')"><img src="assets/baya_zanama.png" class="Seleccion_bayas_img"></td>
+                <td id="PPs_2" onmouseover="ChangeColor('PPs')" onmouseleave="ReturnColor('PPs')" onclick="CalcularTime('PPs')"><img src="assets/baya_zanama.png"></td>
             </tr>
             <tr>
                 <!-- Botón para mostrar Todas las bayas -->
-                <td id="All" onmouseover="ChangeColor('All')" onmouseleave="ReturnColor('All')" onclick="CalcularTime('All')" colspan="2">Ver todo</td>
+                <td id="All" onmouseover="ChangeColor('All')" onmouseleave="ReturnColor('All')" onclick="CalcularTime('All')" colspan="2">Ver todas las bayas</td>
             </tr>
         </table>
     </div>
     <!-- #endregion -->
 
-    <!-- <div id="espacio1">&nbsp;</div> Esto hay que solucionarlo con CSS-->
     <!-- #region Cuerpo -->
     <div id="cuerpo">
-        <p>¡Bienvenido a la Gu&iacute;a Dinamica de Cultivos para PokeMMO!</p>
-        <p>Estas son herramientas para calcular cuando estarán listas tus bayas, junto con una lista que te será de ayuda para conocer las caracteristicas principales de las bayas</p>
+        <div class="txt">
+            <p>¡Bienvenido a la Gu&iacute;a Dinamica de Cultivos para PokeMMO!</p>
+            <p>Estas son herramientas para calcular cuando estarán listas tus bayas, junto con una lista que te será de ayuda para conocer las caracteristicas principales de las bayas</p>
+        </div>
         
         <!-- #region Filtro Y Calculadora -->
+        <!-- La calculadora permite filtrar las bayas de la lista de abajo y mostrar los datos de la baya, su nombre, cuanto tarda en crecer y la hora en la que estará lista -->
         <table id="calculadora">
             <tr>
                 <td class="calc_sub">Escoje la categoria de baya a cosechar</td>
@@ -86,21 +88,26 @@
                 <td id="baya_crecimiento" class="calc_td"></td>
                 <td id="baya_lista" class="calc_td"></td>
             </tr>
-        </table><!-- <br> -->
+        </table>
+        <!-- #endregion -->
 
-        <div style="border: 2px dashed rgba(219, 11, 1, 86%); display: flex; flex-direction: column; padding: 10px 10px; border-radius: 5px; background-color: rgba(230, 180, 180, 0.5);">
+        <!-- #region Abreviaciones -->
+        <div class="importante">
             <b>Abreviaciones:</b>
             <div><b> » TC:</b> Tiempo de Crecimiento</div>
             <div><b> » BC:</b> Bayas obtenidas por cultivo</div>
-        </div><br>
+        </div>
+        <!-- #endregion -->
 
+        <!-- #region Filtro -->
+        <!-- Muestra las bayas y su información dependiendo de la categoría de bayas seleccionada en la tabla "Calculadora" -->
         <table id="filtro">
             <tr>
                 <td class="filt_sub" colspan="5">Mostrando todas las bayas</td>
             </tr>
             <tr>
                 <td class="filt_sub" style='width:15%;'>Nombre</td>
-                <td class="filt_sub" style='width:30%;'>Se crea con:</td>
+                <td class="filt_sub" style='width:30%;'>Se crea con</td>
                 <td class="filt_sub" style='width:30%;'>Usos</td>
                 <td class="filt_sub" style='width:10%;'>TC</td>
                 <td class="filt_sub" style='width:10%;'>BC</td>
@@ -108,29 +115,29 @@
             <tr>
                 <td><img src="assets/baya_zreza.png" class="berrie_table"><br> Zreza</td>
                 <td>3 semillas picantes <img src="assets/picante.png" class="seed_table"></td>
-                <td>Cura la paralisis <hr color="#C30900"> Farmeo de semillas picantes</td>
+                <td>Cura la paralisis <hr> Farmeo de semillas picantes</td>
                 <td rowspan="5">16 hrs</td>
                 <td rowspan="5">2 - 6</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_atania.png" class="berrie_table"><br> Atania</td>
                 <td>3 semillas secas <img src="assets/seca.png" class="seed_table"></td>
-                <td>Despierta al Pok&eacute;mon <hr color="#C30900"> Farmeo de semillas secas</td>
+                <td>Despierta al Pok&eacute;mon <hr> Farmeo de semillas secas</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_meloc.png" class="berrie_table"><br> Meloc</td>
                 <td>3 semillas dulces <img src="assets/dulce.png" class="seed_table"></td>
-                <td>Cura el envenenamiento <hr color="#C30900"> Farmeo de semillas dulces</td>
+                <td>Cura el envenenamiento <hr> Farmeo de semillas dulces</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_safre.png" class="berrie_table"><br> Safre</td>
                 <td>3 semillas amargas <img src="assets/amarga.png" class="seed_table"></td>
-                <td>Cura las quemaduras <hr color="#C30900"> Farmeo de semillas amargas</td>
+                <td>Cura las quemaduras <hr> Farmeo de semillas amargas</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_perasi.png" class="berrie_table"><br> Perasi</td>
                 <td>3 semillas &aacute;cidas <img src="assets/acida.png" class="seed_table"></td>
-                <td>Cura el congelamiento <hr color="#C30900"> Farmeo de semillas &aacute;cidas</td>
+                <td>Cura el congelamiento <hr> Farmeo de semillas &aacute;cidas</td>
             </tr>
 
             <tr>
@@ -140,7 +147,7 @@
                     <br>+ 1 semilla amarga  <img src="assets/amarga.png" class="seed_table">
                     <br>+ 1 semilla muy picante <img src="assets/muy_picante.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de PS <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de PS <hr> Aumenta la felicidad</td>
                 <td rowspan="6">44 hrs</td>
                 <td rowspan="6">7 - 9</td>
             </tr>
@@ -151,7 +158,7 @@
                     <br>+ 1 semilla &aacute;cida <img src="assets/acida.png" class="seed_table">
                     <br>+ 1 semilla muy seca <img src="assets/muy_seca.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Atk <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Atk <hr> Aumenta la felicidad</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_ispero.png" class="berrie_table"><br> Ispero</td>
@@ -160,7 +167,7 @@
                     <br>+ 1 semilla dulce <img src="assets/dulce.png" class="seed_table">
                     <br>+ 1 semilla muy dulce <img src="assets/muy_dulce.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Def <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Def <hr> Aumenta la felicidad</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_meluce.png" class="berrie_table"><br> Meluce</td>
@@ -169,7 +176,7 @@
                     <br>+ 1 semilla amarga <img src="assets/amarga.png" class="seed_table">
                     <br>+ 1 semilla muy amarga <img src="assets/muy_amarga.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Sp. Atk <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Sp. Atk <hr> Aumenta la felicidad</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_uvav.png" class="berrie_table"><br> Uvav</td>
@@ -178,7 +185,7 @@
                     <br>+ 1 semilla &aacute;cida <img src="assets/acida.png" class="seed_table">
                     <br>+ 1 semilla muy &aacute;cida <img src="assets/muy_acida.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Sp. Def <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Sp. Def <hr> Aumenta la felicidad</td>
             </tr>
             <tr>
                 <td><img src="assets/baya_tamate.png" class="berrie_table"><br> Tamate</td>
@@ -187,7 +194,7 @@
                     <br>+ 1 semilla seca <img src="assets/seca.png" class="seed_table">
                     <br>+ 1 semilla muy picante <img src="assets/muy_picante.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Velocidad <hr color="#C30900"> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Velocidad <hr> Aumenta la felicidad</td>
             </tr>
 
             <tr>
@@ -202,13 +209,15 @@
                 <td>5 - 7</td>
             </tr>
         </table>
+        <!-- #endregion -->
         
-        <br><div id="Creditos">
+        <!-- #region Mis Creditos -->
+        <div id="Creditos">
             <p id="Creditos_Titulo">Está página fue creada y programada por:</p>
             <div>
                 <div id="Creditos_Prop">
                     <img src="assets/FotoCanal.png" id="Creditos_Img">
-                    <br>El Koko Díaz
+                    El Koko Díaz
                 </div>
                 
                 <div id="Creditos_Cuerpo">
@@ -224,15 +233,22 @@
                     
                     <p>
                         Nota: Aún faltan agregar bayas, las estaré añadiendo a futuro, solo puse las más demandadas por el Servidor de Comercio.
-                    </p><br>
+                    </p>
                 </div>
             </div>
         </div>
+        <!-- #endregion -->
 
-        <p><b>Referencias</b> para realizar estas herramientas:</p>
-        <dl><b>⨮</b> Información de las bayas: <a href="http://ziampokemmo.blogspot.com/p/en-esta-guia-vas-aprender-como-cultivar.html?m=1">Guías PokeMMO: Farm de Bayas</a></dl>
-        <dl><b>⨮</b> Im&aacute;genes de las bayas extra&iacute;das de: <a href="https://www.poketudo.com.br/item-leppa-berry">Poketudo</a></dl>
+        <!-- #region Referencias de Imagenes e Información -->
+        <div class="txt">
+            <b>Referencias</b> para realizar estas herramientas:
+            <dl><b>⨮</b> Información de las bayas: <a href="http://ziampokemmo.blogspot.com/p/en-esta-guia-vas-aprender-como-cultivar.html?m=1">Guías PokeMMO: Farm de Bayas</a></dl>
+            <dl><b>⨮</b> Im&aacute;genes de las bayas extra&iacute;das de: <a href="https://www.poketudo.com.br/item-leppa-berry">Poketudo</a></dl>
+        </div>
+        <!-- #endregion -->
     </div>
     <!-- #endregion -->
+
+    <script src="script.js"></script>
 </body>
 </html>
