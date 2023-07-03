@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultivos en PokeMMO</title>
+    <title>Guía de Cultivos en PokeMMO</title>
     <!--Programado y diseñado por El Koko Díaz-->
 
     <link href="style.css" rel="stylesheet" type="text/css" media="screen">
@@ -46,8 +46,8 @@
                     <img src="assets/baya_grana.png" onclick="CalcularTime('grana')" draggable="false"> 
                     <img src="assets/baya_ispero.png" onclick="CalcularTime('ispero')" draggable="false"> 
                     <img src="assets/baya_meluce.png" onclick="CalcularTime('meluce')" draggable="false"> 
-                    <img src="assets/baya_tamate.png" onclick="CalcularTime('tamate')" draggable="false"> 
                     <img src="assets/baya_uvav.png" onclick="CalcularTime('uvav')" draggable="false"> 
+                    <img src="assets/baya_tamate.png" onclick="CalcularTime('tamate')" draggable="false"> 
                 </td>
             </tr>
             <tr>
@@ -67,7 +67,12 @@
     <div id="cuerpo">
         <div class="txt">
             <p>¡Bienvenido a la Gu&iacute;a Dinamica de Cultivos para PokeMMO!</p>
+
             <p>Estas son herramientas para calcular cuando estarán listas tus bayas, junto con una lista que te será de ayuda para conocer las caracteristicas principales de las bayas, la cuál puedes filtrar.</p>
+
+            <p>He renovado el diseño completamente para que esta página tenga una mejor armonía para la vista, junto con nuevos detalles para facilitar su uso y mejorar la comodidad al utilizar las herramientas.</p>
+
+            <p>Esta página actualmente cuenta solo con las bayas más solicitadas por el Servidor de Comercio en PokeMMO, el resto de las bayas y su información las estaré añadiendo a futuro.</p>
         </div>
         
         <!-- #region Filtro Y Calculadora -->
@@ -107,8 +112,8 @@
             </tr>
             <tr class="encabezado">
                 <td class="filt_sub" style='width:15%;'>Nombre</td>
-                <td class="filt_sub" style='width:30%;'>Se crea con</td>
-                <td class="filt_sub" style='width:30%;'>Usos</td>
+                <td class="filt_sub" style='width:30%;'>Se cultiva con</td>
+                <td class="filt_sub" style='width:30%;'>Utilidad</td>
                 <td class="filt_sub" style='width:10%;'>TC</td>
                 <td class="filt_sub" style='width:10%;'>BC</td>
             </tr>
@@ -117,30 +122,30 @@
             <!-- #region Bayas que ofrecen Semillas -->
             <tr class="semillas">
                 <td><img src="assets/baya_zreza.png" class="berrie_table"><br> Zreza</td>
-                <td>3 semillas picantes <img src="assets/picante.png" class="seed_table"></td>
-                <td>Cura la paralisis <hr> Farmeo de semillas picantes</td>
+                <td>3 semillas <b class="picante">picantes</b> <img src="assets/picante.png" class="seed_table"></td>
+                <td>Cura la paralisis <hr> Farmeo de semillas <b class="picante">picantes</b></td>
                 <td rowspan="5">16 hrs</td>
                 <td rowspan="5">2 - 6</td>
             </tr>
             <tr class="semillas">
                 <td><img src="assets/baya_atania.png" class="berrie_table"><br> Atania</td>
-                <td>3 semillas secas <img src="assets/seca.png" class="seed_table"></td>
-                <td>Despierta al Pok&eacute;mon <hr> Farmeo de semillas secas</td>
+                <td>3 semillas <b class="seca">secas</b> <img src="assets/seca.png" class="seed_table"></td>
+                <td>Despierta al Pok&eacute;mon <hr> Farmeo de semillas <b class="seca">secas</b></td>
             </tr>
             <tr class="semillas">
                 <td><img src="assets/baya_meloc.png" class="berrie_table"><br> Meloc</td>
-                <td>3 semillas dulces <img src="assets/dulce.png" class="seed_table"></td>
-                <td>Cura el envenenamiento <hr> Farmeo de semillas dulces</td>
+                <td>3 semillas <b class="dulce">dulces</b> <img src="assets/dulce.png" class="seed_table"></td>
+                <td>Cura el envenenamiento <hr> Farmeo de semillas <b class="dulce">dulces</b></td>
             </tr>
             <tr class="semillas">
                 <td><img src="assets/baya_safre.png" class="berrie_table"><br> Safre</td>
-                <td>3 semillas amargas <img src="assets/amarga.png" class="seed_table"></td>
-                <td>Cura las quemaduras <hr> Farmeo de semillas amargas</td>
+                <td>3 semillas <b class="amarga">amargas</b> <img src="assets/amarga.png" class="seed_table"></td>
+                <td>Cura las quemaduras <hr> Farmeo de semillas <b class="amarga">amargas</b></td>
             </tr>
             <tr class="semillas">
                 <td><img src="assets/baya_perasi.png" class="berrie_table"><br> Perasi</td>
-                <td>3 semillas &aacute;cidas <img src="assets/acida.png" class="seed_table"></td>
-                <td>Cura el congelamiento <hr> Farmeo de semillas &aacute;cidas</td>
+                <td>3 semillas <b class="acida">&aacute;cidas</b> <img src="assets/acida.png" class="seed_table"></td>
+                <td>Cura el congelamiento <hr> Farmeo de semillas <b class="acida">&aacute;cidas</b></td>
             </tr>
             <!-- #endregion -->
 
@@ -148,9 +153,9 @@
             <tr class="evs">
                 <td><img src="assets/baya_grana.png" class="berrie_table"><br> Grana</td>
                 <td>
-                    1 semilla picante <img src="assets/picante.png" class="seed_table">
-                    <br>+ 1 semilla amarga  <img src="assets/amarga.png" class="seed_table">
-                    <br>+ 1 semilla muy picante <img src="assets/muy_picante.png" class="seed_table">
+                    1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
+                    <br>+ 1 semilla <b class="amarga">amarga</b>  <img src="assets/amarga.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_picante">muy picante</b> <img src="assets/muy_picante.png" class="seed_table">
                 </td>
                 <td>Resta 10 Ev´s de PS <hr> Aumenta la felicidad</td>
                 <td rowspan="6">44 hrs</td>
@@ -159,45 +164,45 @@
             <tr class="evs">
                 <td><img src="assets/baya_algama.png" class="berrie_table"><br> Algama</td>
                 <td>
-                    1 semilla seca <img src="assets/seca.png" class="seed_table">
-                    <br>+ 1 semilla &aacute;cida <img src="assets/acida.png" class="seed_table">
-                    <br>+ 1 semilla muy seca <img src="assets/muy_seca.png" class="seed_table">
+                    1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
+                    <br>+ 1 semilla <b class="acida">&aacute;cida</b> <img src="assets/acida.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_seca">muy seca</b> <img src="assets/muy_seca.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Atk <hr> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Ataque <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
                 <td><img src="assets/baya_ispero.png" class="berrie_table"><br> Ispero</td>
                 <td>
-                    1 semilla picante <img src="assets/picante.png" class="seed_table">
-                    <br>+ 1 semilla dulce <img src="assets/dulce.png" class="seed_table">
-                    <br>+ 1 semilla muy dulce <img src="assets/muy_dulce.png" class="seed_table">
+                    1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
+                    <br>+ 1 semilla <b class="dulce">dulce</b> <img src="assets/dulce.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_dulce">muy dulce</b> <img src="assets/muy_dulce.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Def <hr> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Defensa <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
                 <td><img src="assets/baya_meluce.png" class="berrie_table"><br> Meluce</td>
                 <td>
-                    1 semilla seca <img src="assets/seca.png" class="seed_table">
-                    <br>+ 1 semilla amarga <img src="assets/amarga.png" class="seed_table">
-                    <br>+ 1 semilla muy amarga <img src="assets/muy_amarga.png" class="seed_table">
+                    1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
+                    <br>+ 1 semilla <b class="amarga">amarga</b> <img src="assets/amarga.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_amarga">muy amarga</b> <img src="assets/muy_amarga.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Sp. Atk <hr> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Ataque Esp. <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
                 <td><img src="assets/baya_uvav.png" class="berrie_table"><br> Uvav</td>
                 <td>
-                    1 semilla dulce <img src="assets/dulce.png" class="seed_table">
-                    <br>+ 1 semilla &aacute;cida <img src="assets/acida.png" class="seed_table">
-                    <br>+ 1 semilla muy &aacute;cida <img src="assets/muy_acida.png" class="seed_table">
+                    1 semilla <b class="dulce">dulce</b> <img src="assets/dulce.png" class="seed_table">
+                    <br>+ 1 semilla <b class="acida">&aacute;cida</b> <img src="assets/acida.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_acida">muy &aacute;cida</b> <img src="assets/muy_acida.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Sp. Def <hr> Aumenta la felicidad</td>
+                <td>Resta 10 Ev´s de Defensa Esp. <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
                 <td><img src="assets/baya_tamate.png" class="berrie_table"><br> Tamate</td>
                 <td>
-                    1 semilla picante <img src="assets/picante.png" class="seed_table">
-                    <br>+ 1 semilla seca <img src="assets/seca.png" class="seed_table">
-                    <br>+ 1 semilla muy picante <img src="assets/muy_picante.png" class="seed_table">
+                    1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
+                    <br>+ 1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
+                    <br>+ 1 semilla <b class="muy_picante">muy picante</b> <img src="assets/muy_picante.png" class="seed_table">
                 </td>
                 <td>Resta 10 Ev´s de Velocidad <hr> Aumenta la felicidad</td>
             </tr>
@@ -207,9 +212,9 @@
             <tr class="pps">
                 <td><img src="assets/baya_zanama.png" class="berrie_table"><br> Zanama</td>
                 <td>
-                    1 semilla muy picante <img src="assets/picante.png" class="seed_table">
-                    <br>+ 1 semilla dulce <img src="assets/dulce.png" class="seed_table">
-                    <br>+ 1 semilla amarga <img src="assets/amarga.png" class="seed_table">
+                    1 semilla <b class="muy_picante">muy picante</b> <img src="assets/picante.png" class="seed_table">
+                    <br>+ 1 semilla <b class="dulce">dulce</b> <img src="assets/dulce.png" class="seed_table">
+                    <br>+ 1 semilla <b class="amarga">amarga</b> <img src="assets/amarga.png" class="seed_table">
                 </td>
                 <td>Restaura 10 PP de un movimiento</td>
                 <td>20 hrs</td>
@@ -229,19 +234,13 @@
                 </div>
                 
                 <div id="Creditos_Cuerpo">
-                    Soy un joven que le encanta jugar videojuegos, programar y dibujar animaciones.
+                    <p>Soy un joven que le encanta jugar videojuegos, programar y dibujar animaciones.</p>
 
-                    <p>
-                        Puedes seguirme en mi <a href="https://www.youtube.com/channel/UCY8QW6XF3RLp9oeoC3cBU2w">Canal de Youtube</a>, ahí subo videos de mis animaciones sobre Pokémon y algunas otras cosas, si te interesa puedes ir a verlas.
-                    </p>
+                    <p>Puedes seguirme en mi <a href="https://www.youtube.com/channel/UCY8QW6XF3RLp9oeoC3cBU2w">Canal de Youtube</a>, ahí subo videos de mis animaciones sobre Pokémon y algunas otras cosas, si te interesa puedes ir a verlas.</p>
                     
-                    <p>
-                        Espero que está página, las herramientas y la información te sean de utilidad y que así sembrar cultivos en PokeMMO sea más fácil y sencillo. Las estaré actualizando en caso de que sea necesario.
-                    </p>
-                    
-                    <p>
-                        Nota: Aún faltan agregar bayas, las estaré añadiendo a futuro, solo puse las más demandadas por el Servidor de Comercio.
-                    </p>
+                    <p>Espero que está página, las herramientas y la información te sean de utilidad y que así sembrar cultivos en PokeMMO sea más fácil y sencillo. Las estaré actualizando en caso de que sea necesario.</p>
+
+                    <p>Para esta página aún tengo planeado añadir una que otra función, además de terminar de colocar las bayas que existen en el juego para tener una guía completa.</p>
 
                     <div class="redes_sociales">
                         <a href="https://www.youtube.com/channel/UCY8QW6XF3RLp9oeoC3cBU2w" class="links">

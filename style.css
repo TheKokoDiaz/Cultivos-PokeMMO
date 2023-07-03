@@ -121,6 +121,18 @@ img{ user-select: none; }
     width: 90%;
     border: 0.5px solid rgb(0, 0, 120);
 }
+
+/** Colores Semillas */
+.picante{ color: rgb(230, 152, 40); }
+.muy_picante { color: rgb(223, 131, 0); }
+.seca{ color: rgb(34, 126, 167); }
+.muy_seca{ color: rgb(0, 112, 163); }
+.dulce{ color: rgb(246, 67, 232); }
+.muy_dulce{ color: rgb(207, 0, 191); }
+.amarga{ color: rgb(110, 195, 51); }
+.muy_amarga{ color: rgb(70, 160, 0); }
+.acida{ color: rgb(188, 192, 56); }
+.muy_acida{ color: rgb(165, 150, 0); }
 /* #endregion */
 
 /* #region Calculadora */
@@ -337,12 +349,18 @@ img{ user-select: none; }
     border-radius: 8px;
     background-color: rgba(90, 0, 180, 0.1);
     color: black;
+    text-decoration: none;
     transition-duration: 300ms;
     user-select: none;
 }
 
 .redes_sociales .links:hover{
     background-color: rgba(255, 255, 255, 0.4);
+    flex-basis: 60%;
+}
+
+.redes_sociales .links:active{
+    background-color: rgba(0, 0, 0, 0.1);
     flex-basis: 60%;
 }
 
