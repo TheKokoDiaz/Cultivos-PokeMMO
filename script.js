@@ -1,8 +1,12 @@
 //#region Variables
 let table = document.getElementById('filtro');
-let calculadora = document.getElementById('calculadora');
 let table_complete =  table.outerHTML;
 var wdn = document.getElementById('Seleccion_bayas');
+let calculadora = document.getElementById('calculadora');
+let baya_calc = document.getElementById('baya_calc');
+var uso_baya = document.getElementById('uso_baya');
+var time = document.getElementById('baya_crecimiento');
+var baya_lista = document.getElementById('baya_lista');
 //#endregion
 
 //#region Almacenar Objetos HTML
@@ -36,14 +40,13 @@ function DestacarFila(clase){
 
 //#region Calcular Tiempo 
 function CalcularTime(type){
-    let img = document.getElementById('baya_calc');
-
     let hr_actual = new Date();
     let hr = hr_actual.getHours();
     let min = hr_actual.getMinutes();
     
     let time_grow = 0;
     let baya = '';
+    let txt = '';
     let txt_encabezado = '';
     
     if(type == 'Semillas' || type == 'atania' || type == 'meloc' || type == 'perasi' || type == 'safre' || type == 'zreza')
@@ -53,30 +56,7 @@ function CalcularTime(type){
         txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
         table.innerHTML = txt_encabezado + encabezado + semillas;
         
-        if(type == 'Semillas'){
-            baya = Math.round(Math.random() * (5 - 1) + 1);
-            switch(baya){
-                case 1:
-                    baya = 'zreza';
-                    break;
-                    
-                case 2:
-                    baya = 'atania';
-                    break;
-    
-                case 3:
-                    baya = 'meloc';
-                    break;
-    
-                case 4:
-                    baya = 'safre';
-                    break;
-    
-                case 5:
-                    baya = 'perasi';
-                    break;
-            }
-        } else { 
+        if(type != 'Semillas'){ 
             baya = type;
             DestacarFila(type);
             event.stopPropagation();
@@ -90,34 +70,7 @@ function CalcularTime(type){
         txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
         table.innerHTML = txt_encabezado + encabezado + evs;
         
-        if(type == 'Evs'){
-            baya = Math.round(Math.random() * (6 - 1) + 1);
-            switch(baya){
-                case 1:
-                    baya = 'grana';
-                    break;
-                    
-                case 2:
-                    baya = 'algama';
-                    break;
-    
-                case 3:
-                    baya = 'ispero';
-                    break;
-    
-                case 4:
-                    baya = 'meluce';
-                    break;
-    
-                case 5:
-                    baya = 'uvav';
-                    break;
-                
-                case 6:
-                    baya = 'tamate';
-                    break;
-            }
-        } else {
+        if(type != 'Evs'){
             baya = type;
             DestacarFila(type);
             event.stopPropagation();
@@ -135,16 +88,36 @@ function CalcularTime(type){
     }
 
     if(type != 'All'){
-        var time = document.getElementById('baya_crecimiento');
         time.innerHTML = time_grow + ' horas';
-        img.innerHTML = '<img src="assets/baya_' + baya + '.png" class="baya_icon">';
+        baya_calc.style.display = 'block';
+        baya_calc.innerHTML = '<img src="assets/baya_' + baya + '.png" class="baya_icon">';
+        
 
-        var usage = document.getElementById('uso_baya');
-        usage.innerHTML = '<p>' + txt + '</p>';
+        if(type != 'Evs' && type != 'Semillas' && type != 'PPs'){
+            uso_baya.innerHTML = '<b class="nombre_baya">Baya ' + type + '</b>';
+
+            if(type == 'atania'){uso_baya.innerHTML += '<p>Despierta al Pokémon / Farmeo de semillas secas</p>';}
+            if(type == 'meloc'){uso_baya.innerHTML += '<p>Cura el envenenamiento / Farmeo de semillas dulces</p>';}
+            if(type == 'perasi'){uso_baya.innerHTML += '<p>Cura el congelamiento / Farmeo de semillas ácidas</p>';}
+            if(type == 'safre'){uso_baya.innerHTML += '<p>Cura las quemaduras / Farmeo de semillas amargas</p>';}
+            if(type == 'zreza'){uso_baya.innerHTML += '<p>Cura la paralisis / Farmeo de semillas picantes</p>';}
+            if(type == 'algama'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Ataque / Aumenta la felicidad</p>';}
+            if(type == 'grana'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de PS / Aumenta la felicidad</p>';}
+            if(type == 'ispero'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Defensa / Aumenta la felicidad</p>';}
+            if(type == 'meluce'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Ataque Esp. / Aumenta la felicidad</p>';}
+            if(type == 'tamate'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Velocidad / Aumenta la felicidad</p>';}
+            if(type == 'uvav'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Defensa Esp. / Aumenta la felicidad</p>';}
+
+        } else {
+            if(type == 'PPs'){ uso_baya.innerHTML = '<b class="nombre_baya">Baya zanama</b><p>Restaura 10 PP de un movimiento</p>'; }
+            else {
+                uso_baya.innerHTML = '<p>' + txt + '</p>';
+                baya_calc.style.display = 'none';
+            }
+        }
         
         var days = '';
         var tot = time_grow + hr;
-        var recolect = document.getElementById('baya_lista');
         
         if(tot > 48) //Para quitarle 2 días
         {
@@ -166,11 +139,11 @@ function CalcularTime(type){
             {
                 tot -= 12;
                 if(tot == 0){tot = 12;}
-                recolect.innerHTML = days + ' a las ' + tot + ':' + min + ' PM';
+                baya_lista.innerHTML = days + ' a las ' + tot + ':' + min + ' PM';
             }
             else
             {
-                recolect.innerHTML = days + ' a las ' + tot + ':' + min + ' AM';
+                baya_lista.innerHTML = days + ' a las ' + tot + ':' + min + ' AM';
             }
         }
         else
@@ -179,32 +152,27 @@ function CalcularTime(type){
             {
                 tot -= 12;
                 if(tot == 0){tot = 12;}
-                recolect.innerHTML = 'A las ' + tot + ':' + min + ' PM';
+                baya_lista.innerHTML = 'A las ' + tot + ':' + min + ' PM';
             }
             else
             {
-                recolect.innerHTML = 'A las ' + tot + ':' + min + ' AM';
+                baya_lista.innerHTML = 'A las ' + tot + ':' + min + ' AM';
             }
         }
+
+        calculadora.scrollIntoView({ behavior: 'smooth' });
     }
 
     if(type == 'All')
     {
         table.innerHTML = table_complete;
-        
-        var time = document.getElementById('baya_crecimiento');
         time.innerHTML = '';
+        uso_baya.innerHTML = '';
+        baya_lista.innerHTML = '';
+        baya_calc.style.display = 'none';
 
-        var usage = document.getElementById('uso_baya');
-        usage.innerHTML = '';
-
-        var recolect = document.getElementById('baya_lista');
-        recolect.innerHTML = '';
-
-        img.innerHTML = '';
+        table.scrollIntoView({ behavior: 'smooth' });
     }
-
-    calculadora.scrollIntoView({ behavior: 'smooth' });
 
     Cerrar_Ventana();
 }
