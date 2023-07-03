@@ -103,8 +103,11 @@ img{ user-select: none; }
     border:1px solid rgba(0, 0, 120, 0.6);
 }
 
-#filtro td{
+#filtro tr{
     background-color: rgb(200, 240, 255);
+}
+
+#filtro td{
     border:1px solid rgba(0, 0, 120, 0.6);
     padding: 8px 4px;
 }
@@ -119,7 +122,7 @@ img{ user-select: none; }
 
 #filtro hr{
     width: 90%;
-    border: 0.5px solid rgb(0, 0, 120);
+    border: 0.5px solid rgb(0, 0, 100);
 }
 
 /** Colores Semillas */
@@ -133,6 +136,28 @@ img{ user-select: none; }
 .muy_amarga{ color: rgb(70, 160, 0); }
 .acida{ color: rgb(188, 192, 56); }
 .muy_acida{ color: rgb(165, 150, 0); }
+
+/** Colores destacados */
+#filtro .destacar{
+    background-color: rgb(0, 0, 120);
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+#filtro .destacar hr{
+    border-color: rgb(0, 174, 255);
+}
+
+.destacar .picante{ color: rgb(255, 174, 61); }
+.destacar .muy_picante { color: rgb(255, 149, 0); }
+.destacar .seca{ color: rgb(52, 194, 255); }
+.destacar .muy_seca{ color: rgb(0, 174, 255); }
+.destacar .dulce{ color: rgb(255, 93, 241); }
+.destacar .muy_dulce{ color: rgb(255, 0, 234); }
+.destacar .amarga{ color: rgb(150, 255, 75); }
+.destacar .muy_amarga{ color: rgb(111, 255, 0); }
+.destacar .acida{ color: rgb(250, 255, 93); }
+.destacar .muy_acida{ color: rgb(255, 234, 0); }
 /* #endregion */
 
 /* #region Calculadora */

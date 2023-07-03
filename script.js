@@ -1,5 +1,6 @@
 //#region Variables
 let table = document.getElementById('filtro');
+let calculadora = document.getElementById('calculadora');
 let table_complete =  table.outerHTML;
 var wdn = document.getElementById('Seleccion_bayas');
 //#endregion
@@ -24,7 +25,16 @@ let evs = AlmacenarHTML('evs');
 let pps = AlmacenarHTML('pps');
 //#endregion
 
-//#region Calcular Tiempo
+//#region Destacar Fila de filtro
+function DestacarFila(clase){
+    let fila = document.getElementsByClassName(clase);
+    for(var n = 0 ; n < fila.length ; n++){
+        fila[n].classList.add('destacar');
+    }
+}
+//#endregion
+
+//#region Calcular Tiempo 
 function CalcularTime(type){
     let img = document.getElementById('baya_calc');
 
@@ -39,6 +49,9 @@ function CalcularTime(type){
     if(type == 'Semillas' || type == 'atania' || type == 'meloc' || type == 'perasi' || type == 'safre' || type == 'zreza')
     {
         time_grow = 16;
+        txt = 'Curar problemas de estado / Farmeo de semillas';
+        txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
+        table.innerHTML = txt_encabezado + encabezado + semillas;
         
         if(type == 'Semillas'){
             baya = Math.round(Math.random() * (5 - 1) + 1);
@@ -64,19 +77,18 @@ function CalcularTime(type){
                     break;
             }
         } else { 
-            baya = type; 
+            baya = type;
+            DestacarFila(type);
             event.stopPropagation();
         }
-        
-        txt = 'Farmeo de semillas';
-        txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
-
-        table.innerHTML = txt_encabezado + encabezado + semillas;
     }
     
     if(type == 'Evs' || type == 'algama' || type == 'grana' || type == 'ispero' || type == 'meluce' || type == 'tamate' || type == 'uvav')
     {
         time_grow = 44;
+        txt = "Disminuir Ev's / Aumentar la Felicidad";
+        txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
+        table.innerHTML = txt_encabezado + encabezado + evs;
         
         if(type == 'Evs'){
             baya = Math.round(Math.random() * (6 - 1) + 1);
@@ -107,13 +119,9 @@ function CalcularTime(type){
             }
         } else {
             baya = type;
+            DestacarFila(type);
             event.stopPropagation();
         }
-
-        txt = "Cambio de Ev's";
-        txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
-
-        table.innerHTML = txt_encabezado + encabezado + evs;
     }
     
     if(type == 'PPs')
@@ -196,11 +204,13 @@ function CalcularTime(type){
         img.innerHTML = '';
     }
 
+    calculadora.scrollIntoView({ behavior: 'smooth' });
+
     Cerrar_Ventana();
 }
 //#endregion
 
-//#region Cambiar Color
+//#region Cambiar Color de Celdas en Tabla Selección
 function ChangeColor(a){
     if(a != 'All'){
         var x = a + '_1';

@@ -31,19 +31,19 @@
                 <!-- Botones para mostrar las bayas que dan semillas -->
                 <td id="Semillas_1" onmouseover="ChangeColor('Semillas')" onmouseleave="ReturnColor('Semillas')" onclick="CalcularTime('Semillas')">Semillas</td>
                 <td id="Semillas_2" onmouseover="ChangeColor('Semillas')" onmouseleave="ReturnColor('Semillas')" onclick="CalcularTime('Semillas')">
+                    <img src="assets/baya_zreza.png" onclick="CalcularTime('zreza')" draggable="false"> 
                     <img src="assets/baya_atania.png" onclick="CalcularTime('atania')" draggable="false"> 
                     <img src="assets/baya_meloc.png" onclick="CalcularTime('meloc')" draggable="false"> 
-                    <img src="assets/baya_perasi.png" onclick="CalcularTime('perasi')" draggable="false"> 
                     <img src="assets/baya_safre.png" onclick="CalcularTime('safre')" draggable="false"> 
-                    <img src="assets/baya_zreza.png" onclick="CalcularTime('zreza')" draggable="false"> 
+                    <img src="assets/baya_perasi.png" onclick="CalcularTime('perasi')" draggable="false"> 
                 </td>
             </tr>
             <tr>
                 <!-- Botones para mostrar las bayas que cambian los EV's -->
                 <td id="Evs_1" onmouseover="ChangeColor('Evs')" onmouseleave="ReturnColor('Evs')" onclick="CalcularTime('Evs')">Ev's</td>
                 <td  id="Evs_2" onmouseover="ChangeColor('Evs')" onmouseleave="ReturnColor('Evs')" onclick="CalcularTime('Evs')">
-                    <img src="assets/baya_algama.png" onclick="CalcularTime('algama')" draggable="false"> 
                     <img src="assets/baya_grana.png" onclick="CalcularTime('grana')" draggable="false"> 
+                    <img src="assets/baya_algama.png" onclick="CalcularTime('algama')" draggable="false"> 
                     <img src="assets/baya_ispero.png" onclick="CalcularTime('ispero')" draggable="false"> 
                     <img src="assets/baya_meluce.png" onclick="CalcularTime('meluce')" draggable="false"> 
                     <img src="assets/baya_uvav.png" onclick="CalcularTime('uvav')" draggable="false"> 
@@ -75,7 +75,7 @@
             <p>Esta página actualmente cuenta solo con las bayas más solicitadas por el Servidor de Comercio en PokeMMO, el resto de las bayas y su información las estaré añadiendo a futuro.</p>
         </div>
         
-        <!-- #region Filtro Y Calculadora -->
+        <!-- #region Calculadora -->
         <!-- La calculadora permite filtrar las bayas de la lista de abajo y mostrar los datos de la baya, su nombre, cuanto tarda en crecer y la hora en la que estará lista -->
         <table id="calculadora">
             <tr>
@@ -121,90 +121,90 @@
 
             <!-- #region Bayas que ofrecen Semillas -->
             <tr class="semillas">
-                <td><img src="assets/baya_zreza.png" class="berrie_table"><br> Zreza</td>
-                <td>3 semillas <b class="picante">picantes</b> <img src="assets/picante.png" class="seed_table"></td>
-                <td>Cura la paralisis <hr> Farmeo de semillas <b class="picante">picantes</b></td>
+                <td class="zreza"><img src="assets/baya_zreza.png" class="berrie_table"><br> Zreza</td>
+                <td class="zreza">3 semillas <b class="picante">picantes</b> <img src="assets/picante.png" class="seed_table"></td>
+                <td class="zreza">Cura la paralisis <hr> Farmeo de semillas <b class="picante">picantes</b></td>
                 <td rowspan="5">16 hrs</td>
                 <td rowspan="5">2 - 6</td>
             </tr>
             <tr class="semillas">
-                <td><img src="assets/baya_atania.png" class="berrie_table"><br> Atania</td>
-                <td>3 semillas <b class="seca">secas</b> <img src="assets/seca.png" class="seed_table"></td>
-                <td>Despierta al Pok&eacute;mon <hr> Farmeo de semillas <b class="seca">secas</b></td>
+                <td class="atania"><img src="assets/baya_atania.png" class="berrie_table"><br> Atania</td>
+                <td class="atania">3 semillas <b class="seca">secas</b> <img src="assets/seca.png" class="seed_table"></td>
+                <td class="atania">Despierta al Pok&eacute;mon <hr> Farmeo de semillas <b class="seca">secas</b></td>
             </tr>
             <tr class="semillas">
-                <td><img src="assets/baya_meloc.png" class="berrie_table"><br> Meloc</td>
-                <td>3 semillas <b class="dulce">dulces</b> <img src="assets/dulce.png" class="seed_table"></td>
-                <td>Cura el envenenamiento <hr> Farmeo de semillas <b class="dulce">dulces</b></td>
+                <td class="meloc"><img src="assets/baya_meloc.png" class="berrie_table"><br> Meloc</td>
+                <td class="meloc">3 semillas <b class="dulce">dulces</b> <img src="assets/dulce.png" class="seed_table"></td>
+                <td class="meloc">Cura el envenenamiento <hr> Farmeo de semillas <b class="dulce">dulces</b></td>
             </tr>
             <tr class="semillas">
-                <td><img src="assets/baya_safre.png" class="berrie_table"><br> Safre</td>
-                <td>3 semillas <b class="amarga">amargas</b> <img src="assets/amarga.png" class="seed_table"></td>
-                <td>Cura las quemaduras <hr> Farmeo de semillas <b class="amarga">amargas</b></td>
+                <td class="safre"><img src="assets/baya_safre.png" class="berrie_table"><br> Safre</td>
+                <td class="safre">3 semillas <b class="amarga">amargas</b> <img src="assets/amarga.png" class="seed_table"></td>
+                <td class="safre">Cura las quemaduras <hr> Farmeo de semillas <b class="amarga">amargas</b></td>
             </tr>
             <tr class="semillas">
-                <td><img src="assets/baya_perasi.png" class="berrie_table"><br> Perasi</td>
-                <td>3 semillas <b class="acida">&aacute;cidas</b> <img src="assets/acida.png" class="seed_table"></td>
-                <td>Cura el congelamiento <hr> Farmeo de semillas <b class="acida">&aacute;cidas</b></td>
+                <td class="perasi"><img src="assets/baya_perasi.png" class="berrie_table"><br> Perasi</td>
+                <td class="perasi">3 semillas <b class="acida">&aacute;cidas</b> <img src="assets/acida.png" class="seed_table"></td>
+                <td class="perasi">Cura el congelamiento <hr> Farmeo de semillas <b class="acida">&aacute;cidas</b></td>
             </tr>
             <!-- #endregion -->
 
             <!-- #region Bayas que cambian los EV´s -->
             <tr class="evs">
-                <td><img src="assets/baya_grana.png" class="berrie_table"><br> Grana</td>
-                <td>
+                <td class="grana"><img src="assets/baya_grana.png" class="berrie_table"><br> Grana</td>
+                <td class="grana">
                     1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
                     <br>+ 1 semilla <b class="amarga">amarga</b>  <img src="assets/amarga.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_picante">muy picante</b> <img src="assets/muy_picante.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de PS <hr> Aumenta la felicidad</td>
+                <td class="grana">Resta 10 Ev´s de PS <hr> Aumenta la felicidad</td>
                 <td rowspan="6">44 hrs</td>
                 <td rowspan="6">7 - 9</td>
             </tr>
             <tr class="evs">
-                <td><img src="assets/baya_algama.png" class="berrie_table"><br> Algama</td>
-                <td>
+                <td class="algama"><img src="assets/baya_algama.png" class="berrie_table"><br> Algama</td>
+                <td class="algama">
                     1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
                     <br>+ 1 semilla <b class="acida">&aacute;cida</b> <img src="assets/acida.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_seca">muy seca</b> <img src="assets/muy_seca.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Ataque <hr> Aumenta la felicidad</td>
+                <td class="algama">Resta 10 Ev´s de Ataque <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
-                <td><img src="assets/baya_ispero.png" class="berrie_table"><br> Ispero</td>
-                <td>
+                <td class="ispero"><img src="assets/baya_ispero.png" class="berrie_table"><br> Ispero</td>
+                <td class="ispero">
                     1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
                     <br>+ 1 semilla <b class="dulce">dulce</b> <img src="assets/dulce.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_dulce">muy dulce</b> <img src="assets/muy_dulce.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Defensa <hr> Aumenta la felicidad</td>
+                <td class="ispero">Resta 10 Ev´s de Defensa <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
-                <td><img src="assets/baya_meluce.png" class="berrie_table"><br> Meluce</td>
-                <td>
+                <td class="meluce"><img src="assets/baya_meluce.png" class="berrie_table"><br> Meluce</td>
+                <td class="meluce">
                     1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
                     <br>+ 1 semilla <b class="amarga">amarga</b> <img src="assets/amarga.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_amarga">muy amarga</b> <img src="assets/muy_amarga.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Ataque Esp. <hr> Aumenta la felicidad</td>
+                <td class="meluce">Resta 10 Ev´s de Ataque Esp. <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
-                <td><img src="assets/baya_uvav.png" class="berrie_table"><br> Uvav</td>
-                <td>
+                <td class="uvav"><img src="assets/baya_uvav.png" class="berrie_table"><br> Uvav</td>
+                <td class="uvav">
                     1 semilla <b class="dulce">dulce</b> <img src="assets/dulce.png" class="seed_table">
                     <br>+ 1 semilla <b class="acida">&aacute;cida</b> <img src="assets/acida.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_acida">muy &aacute;cida</b> <img src="assets/muy_acida.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Defensa Esp. <hr> Aumenta la felicidad</td>
+                <td class="uvav">Resta 10 Ev´s de Defensa Esp. <hr> Aumenta la felicidad</td>
             </tr>
             <tr class="evs">
-                <td><img src="assets/baya_tamate.png" class="berrie_table"><br> Tamate</td>
-                <td>
+                <td class="tamate"><img src="assets/baya_tamate.png" class="berrie_table"><br> Tamate</td>
+                <td class="tamate">
                     1 semilla <b class="picante">picante</b> <img src="assets/picante.png" class="seed_table">
                     <br>+ 1 semilla <b class="seca">seca</b> <img src="assets/seca.png" class="seed_table">
                     <br>+ 1 semilla <b class="muy_picante">muy picante</b> <img src="assets/muy_picante.png" class="seed_table">
                 </td>
-                <td>Resta 10 Ev´s de Velocidad <hr> Aumenta la felicidad</td>
+                <td class="tamate">Resta 10 Ev´s de Velocidad <hr> Aumenta la felicidad</td>
             </tr>
             <!-- #endregion -->
 
