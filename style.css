@@ -316,4 +316,37 @@ img{ user-select: none; }
     padding: 0 8px;
     box-sizing: border-box;
 }
+
+.redes_sociales{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+.redes_sociales .links{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    padding: 1vh 0;
+    margin: 0.5vh 0;
+    font-family: 'Raleway-Black';
+    border-radius: 8px;
+    background-color: rgba(90, 0, 180, 0.1);
+    color: black;
+    transition-duration: 300ms;
+    user-select: none;
+}
+
+.redes_sociales .links:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-basis: 60%;
+}
+
+.redes_sociales img{
+    width: 22px;
+}
 /* #endregion */
