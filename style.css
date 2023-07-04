@@ -31,6 +31,21 @@ body{
     gap: 1vh;
 }
 
+/* #region Scrollbars */
+html::-webkit-scrollbar{
+    width: 8px;
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 60, 120);
+}
+
+html::-webkit-scrollbar-thumb:active{
+    background-color: rgb(0, 120, 255);
+}
+/* #endregion */
+
 /* #region Encabezado */
 #encabezado{
     width: 100%;
@@ -55,7 +70,7 @@ body{
     align-items: center;
 
     flex-direction: column;
-    gap: 1vh;
+    gap: 1.5vh;
 }
 
 .txt{
@@ -370,6 +385,7 @@ img{ user-select: none; }
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1vh;
     gap: 1vh;
 }
 
@@ -402,5 +418,150 @@ img{ user-select: none; }
 
 .redes_sociales img{
     width: 22px;
+}
+/* #endregion */
+
+/* #region @media querie for Tablets */
+@media screen and (min-width: 426px)/*  and (max-width: 768px) */{
+    body, #Btn_Seleccionar{
+        font-size: 12.5px;
+    }
+
+    #encabezado{
+        font-size: 23px;
+    }
+
+    #cuerpo{
+        width: 90%;
+    }
+
+    .importante{
+        border: 2.5px dotted rgb(0, 0, 120);
+        padding: 8px 16px;
+    }
+
+    #filtro, #filtro td, #filtro .filt_sub, #calculadora, #calculadora td, #calculadora .calc_sub, #Btn_Seleccionar, #Tabla_Seleccion, #Tabla_Seleccion .Titulo, #Tabla_Seleccion td{
+        border-width: 1.7px;
+    }
+
+    #filtro td{
+        padding: 8px 4px;
+    }
+
+    #filtro hr{
+        width: 90%;
+        border: 0.5px solid rgb(0, 0, 100);
+    }
+
+    #calculadora .nombre_baya, #Tabla_Seleccion .Titulo, #All, #Creditos_Titulo{
+        font-size: 18px;
+    }
+
+    #Tabla_Seleccion{
+        width: 90%;
+        height: 90%;
+    }
+
+    #Tabla_Seleccion img{
+        width: clamp(35px, 9%, 165px);
+    }
+    
+    #Tabla_Seleccion img:hover{
+        width: clamp(45px, 12%, 185px);
+    }
+
+    #Creditos_Prop{
+        font-size: 28px;
+    }
+
+    #Creditos_Img{
+        width: 180px;
+    }
+
+    #Creditos_Img:hover{
+        width: 210px;
+    }
+
+    .redes_sociales img{
+        width: 26px;
+    }
+}
+/* #endregion */
+
+/* #region @media querie for Laptops */
+@media screen and (min-width: 941px){
+    body, #Btn_Seleccionar{
+        font-size: 14px;
+    }
+
+    #encabezado{
+        font-size: 26px;
+    }
+
+    #cuerpo{
+        width: clamp(904px, 60%, 1440px);
+    }
+
+    .seed_table{
+        width: clamp(15px, 10%, 20px);
+    }
+
+    #filtro hr{
+        width: 80%;
+        border: 1px solid rgb(0, 0, 100);
+    }
+
+    #calculadora .nombre_baya, #Tabla_Seleccion .Titulo, #All, #Creditos_Titulo{
+        font-size: 22px;
+    }
+
+    #Tabla_Seleccion{
+        width: 78%;
+        height: 85%;
+    }
+
+    #Tabla_Seleccion img{
+        width: clamp(50px, 8%, 170px);
+    }
+    
+    #Tabla_Seleccion img:hover{
+        width: clamp(70px, 10%, 190px);
+    }
+    
+    #Creditos{
+        padding: 2.5vh;
+    }
+
+    #Creditos .Creditos_Flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #Creditos_Titulo{
+        width: 100%;
+        margin: 1.5vh 0;
+        padding-bottom: 1vh;
+        border-bottom: 4px double rgb(0, 0, 120);
+    }
+
+    #Creditos_Prop{
+        flex-basis: 30%;
+        font-size: 32px;
+    }
+
+    #Creditos_Img{
+        width: 200px;
+    }
+
+    #Creditos_Img:hover{
+        width: 230px;
+    }
+
+    #Creditos_Cuerpo{
+        flex-basis: 70%;
+    }
 }
 /* #endregion */
