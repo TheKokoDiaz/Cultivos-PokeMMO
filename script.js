@@ -1,98 +1,80 @@
-function verPanel(opc){
-    var Panel = document.getElementById('panel');
+//#region Variables
+let table = document.getElementById('filtro');
+let table_complete =  table.outerHTML;
+var wdn = document.getElementById('Seleccion_bayas');
+let calculadora = document.getElementById('calculadora');
+let baya_calc = document.getElementById('baya_calc');
+var uso_baya = document.getElementById('uso_baya');
+var time = document.getElementById('baya_crecimiento');
+var baya_lista = document.getElementById('baya_lista');
+//#endregion
 
-    if(opc == true)
-    {
-        Panel.style.left = '0%';
+//#region Almacenar Objetos HTML
+function AlmacenarHTML(nombre_clase){
+    table.innerHTML = table_complete;
+    let elementosHTML = '';
+    let elementosClase = document.getElementsByClassName(nombre_clase);
+    for(var n = 0 ; n < elementosClase.length ; n++){
+        elementosHTML += elementosClase[n].outerHTML;
     }
-    else
-    {
-        Panel.style.left = '-40%';
+    
+    return elementosHTML;
+}
+//#endregion
+
+//#region Variables creadas con la función anterior (son fragmentos de la tabla 'filtro')
+let encabezado = AlmacenarHTML('encabezado');
+let semillas = AlmacenarHTML('semillas');
+let evs = AlmacenarHTML('evs');
+let pps = AlmacenarHTML('pps');
+//#endregion
+
+//#region Destacar Fila de filtro
+function DestacarFila(clase){
+    let fila = document.getElementsByClassName(clase);
+    for(var n = 0 ; n < fila.length ; n++){
+        fila[n].classList.add('destacar');
     }
 }
+//#endregion
 
+//#region Calcular Tiempo 
 function CalcularTime(type){
-    var img = document.getElementById('baya_calc');
-
-    var hr_actual = new Date();
-    var hr = hr_actual.getHours();
-    var min = hr_actual.getMinutes();
+    let hr_actual = new Date();
+    let hr = hr_actual.getHours();
+    let min = hr_actual.getMinutes();
     
-    var time_grow = 0;
-    var baya = '';
-    var txt_encabezado = '';
-    var table = document.getElementById('filtro');
-
-    var encabezado = '<tr><td class="filt_sub" style="width:15%;">Nombre</td><td class="filt_sub" style="width:30%;">Se crea con:</td><td class="filt_sub" style="width:30%;">Usos</td><td class="filt_sub" style="width:10%;">TC</td><td class="filt_sub" style="width:10%;">BC</td></tr>';
-
-    if(type == 'Semillas')
+    let time_grow = 0;
+    let baya = '';
+    let txt = '';
+    let txt_encabezado = '';
+    
+    if(type == 'Semillas' || type == 'atania' || type == 'meloc' || type == 'perasi' || type == 'safre' || type == 'zreza')
     {
         time_grow = 16;
-        baya = Math.round(Math.random() * (5 - 1) + 1);
-
-        switch(baya){
-            case 1:
-                baya = 'zreza';
-                break;
-                
-            case 2:
-                baya = 'atania';
-                break;
-
-            case 3:
-                baya = 'meloc';
-                break;
-
-            case 4:
-                baya = 'safre';
-                break;
-
-            case 5:
-                baya = 'perasi';
-                break;
-        }
-        
-        txt = 'Farmeo de semillas';
+        txt = 'Curar problemas de estado / Farmeo de semillas';
         txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
-
-        table.innerHTML = txt_encabezado + encabezado + '<tr><td><img src="baya_zreza.png" class="berrie_table"><br> Zreza</td><td>3 semillas picantes <img src="picante.png" class="seed_table"></td><td>Cura la paralisis <hr color="#C30900"> Farmeo de semillas picantes</td><td rowspan="5">16 hrs</td><td rowspan="5">2 - 6</td></tr><tr><td><img src="baya_atania.png" class="berrie_table"><br> Atania</td><td>3 semillas secas <img src="seca.png" class="seed_table"></td><td>Despierta al Pok&eacute;mon <hr color="#C30900"> Farmeo de semillas secas</td></tr><tr><td><img src="baya_meloc.png" class="berrie_table"><br> Meloc</td><td>3 semillas dulces <img src="dulce.png" class="seed_table"></td><td>Cura el envenenamiento <hr color="#C30900"> Farmeo de semillas dulces</td></tr><tr><td><img src="baya_safre.png" class="berrie_table"><br> Safre</td><td>3 semillas amargas <img src="amarga.png" class="seed_table"></td><td>Cura las quemaduras <hr color="#C30900"> Farmeo de semillas amargas</td></tr><tr><td><img src="baya_perasi.png" class="berrie_table"><br> Perasi</td><td>3 semillas &aacute;cidas <img src="acida.png" class="seed_table"></td><td>Cura el congelamiento <hr color="#C30900"> Farmeo de semillas &aacute;cidas</td></tr>';
+        table.innerHTML = txt_encabezado + encabezado + semillas;
+        
+        if(type != 'Semillas'){ 
+            baya = type;
+            DestacarFila(type);
+            event.stopPropagation();
+        }
     }
     
-    if(type == 'Evs')
+    if(type == 'Evs' || type == 'algama' || type == 'grana' || type == 'ispero' || type == 'meluce' || type == 'tamate' || type == 'uvav')
     {
         time_grow = 44;
-        baya = Math.round(Math.random() * (6 - 1) + 1);
-
-        switch(baya){
-            case 1:
-                baya = 'grana';
-                break;
-                
-            case 2:
-                baya = 'algama';
-                break;
-
-            case 3:
-                baya = 'ispero';
-                break;
-
-            case 4:
-                baya = 'meluce';
-                break;
-
-            case 5:
-                baya = 'uvav';
-                break;
-            
-            case 6:
-                baya = 'tamate';
-                break;
-        }
-
-        txt = "Cambio de Ev's";
+        txt = "Disminuir Ev's / Aumentar la Felicidad";
         txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
-
-        table.innerHTML = txt_encabezado + encabezado + '<tr><td><img src="baya_grana.png" class="berrie_table"><br> Grana</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla amarga  <img src="amarga.png" class="seed_table"><br>+ 1 semilla muy picante <img src="muy_picante.png" class="seed_table"></td><td>Resta 10 Ev´s de PS <hr color="#C30900"> Aumenta la felicidad</td><td rowspan="6">44 hrs</td><td rowspan="6">7 - 9</td></tr><tr><td><img src="baya_algama.png" class="berrie_table"><br> Algama</td><td>1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla &aacute;cida <img src="acida.png" class="seed_table"><br>+ 1 semilla muy seca <img src="muy_seca.png" class="seed_table"></td><td>Resta 10 Ev´s de Atk <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_ispero.png" class="berrie_table"><br> Ispero</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla muy dulce <img src="muy_dulce.png" class="seed_table"></td><td>Resta 10 Ev´s de Def <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_meluce.png" class="berrie_table"><br> Meluce</td><td>1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla amarga <img src="amarga.png" class="seed_table"><br>+ 1 semilla muy amarga <img src="muy_amarga.png" class="seed_table"> </td><td>Resta 10 Ev´s de Sp. Atk <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_uvav.png" class="berrie_table"><br> Uvav</td><td>1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla &aacute;cida <img src="acida.png" class="seed_table"><br>+ 1 semilla muy &aacute;cida <img src="muy_acida.png" class="seed_table"></td><td>Resta 10 Ev´s de Sp. Def <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_tamate.png" class="berrie_table"><br> Tamate</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla muy picante <img src="muy_picante.png" class="seed_table"></td><td>Resta 10 Ev´s de Velocidad <hr color="#C30900"> Aumenta la felicidad</td></tr>';
+        table.innerHTML = txt_encabezado + encabezado + evs;
+        
+        if(type != 'Evs'){
+            baya = type;
+            DestacarFila(type);
+            event.stopPropagation();
+        }
     }
     
     if(type == 'PPs')
@@ -102,20 +84,40 @@ function CalcularTime(type){
         txt = "Recuperar PP's";
         txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando bayas para ' + txt + '</td></tr>';
 
-        table.innerHTML = txt_encabezado + encabezado + '<tr><td><img src="baya_zanama.png" class="berrie_table"> Zanama</td><td>1 semilla muy picante <img src="picante.png" class="seed_table"><br>+ 1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla amarga <img src="amarga.png" class="seed_table"></td><td>Restaura 10 PP de un movimiento</td><td>20 hrs</td><td>5 - 7</td></tr>';
+        table.innerHTML = txt_encabezado + encabezado + pps;
     }
 
     if(type != 'All'){
-        var time = document.getElementById('baya_crecimiento');
         time.innerHTML = time_grow + ' horas';
-        img.innerHTML = '<img src="baya_' + baya + '.png" class="baya_icon">';
+        baya_calc.style.display = 'block';
+        baya_calc.innerHTML = '<img src="assets/baya_' + baya + '.png" class="baya_icon">';
+        
 
-        var usage = document.getElementById('uso_baya');
-        usage.innerHTML = txt + '<br><br>';
+        if(type != 'Evs' && type != 'Semillas' && type != 'PPs'){
+            uso_baya.innerHTML = '<b class="nombre_baya">Baya ' + type + '</b>';
+
+            if(type == 'atania'){uso_baya.innerHTML += '<p>Despierta al Pokémon / Farmeo de semillas secas</p>';}
+            if(type == 'meloc'){uso_baya.innerHTML += '<p>Cura el envenenamiento / Farmeo de semillas dulces</p>';}
+            if(type == 'perasi'){uso_baya.innerHTML += '<p>Cura el congelamiento / Farmeo de semillas ácidas</p>';}
+            if(type == 'safre'){uso_baya.innerHTML += '<p>Cura las quemaduras / Farmeo de semillas amargas</p>';}
+            if(type == 'zreza'){uso_baya.innerHTML += '<p>Cura la paralisis / Farmeo de semillas picantes</p>';}
+            if(type == 'algama'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Ataque / Aumenta la felicidad</p>';}
+            if(type == 'grana'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de PS / Aumenta la felicidad</p>';}
+            if(type == 'ispero'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Defensa / Aumenta la felicidad</p>';}
+            if(type == 'meluce'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Ataque Esp. / Aumenta la felicidad</p>';}
+            if(type == 'tamate'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Velocidad / Aumenta la felicidad</p>';}
+            if(type == 'uvav'){uso_baya.innerHTML += '<p>Resta 10 Ev´s de Defensa Esp. / Aumenta la felicidad</p>';}
+
+        } else {
+            if(type == 'PPs'){ uso_baya.innerHTML = '<b class="nombre_baya">Baya zanama</b><p>Restaura 10 PP de un movimiento</p>'; }
+            else {
+                uso_baya.innerHTML = '<p>' + txt + '</p>';
+                baya_calc.style.display = 'none';
+            }
+        }
         
         var days = '';
         var tot = time_grow + hr;
-        var recolect = document.getElementById('baya_lista');
         
         if(tot > 48) //Para quitarle 2 días
         {
@@ -137,11 +139,11 @@ function CalcularTime(type){
             {
                 tot -= 12;
                 if(tot == 0){tot = 12;}
-                recolect.innerHTML = days + ' a las ' + tot + ':' + min + ' PM';
+                baya_lista.innerHTML = days + ' a las ' + tot + ':' + min + ' PM';
             }
             else
             {
-                recolect.innerHTML = days + ' a las ' + tot + ':' + min + ' AM';
+                baya_lista.innerHTML = days + ' a las ' + tot + ':' + min + ' AM';
             }
         }
         else
@@ -150,37 +152,33 @@ function CalcularTime(type){
             {
                 tot -= 12;
                 if(tot == 0){tot = 12;}
-                recolect.innerHTML = 'A las ' + tot + ':' + min + ' PM';
+                baya_lista.innerHTML = 'A las ' + tot + ':' + min + ' PM';
             }
             else
             {
-                recolect.innerHTML = 'A las ' + tot + ':' + min + ' AM';
+                baya_lista.innerHTML = 'A las ' + tot + ':' + min + ' AM';
             }
         }
+
+        calculadora.scrollIntoView({ behavior: 'smooth' });
     }
 
     if(type == 'All')
     {
-        txt_encabezado = '<tr><td class="filt_sub" colspan="5">' + 'Mostrando todas las bayas' + '</td></tr>';
-
-        table.innerHTML = txt_encabezado + encabezado + '<tr><td><img src="baya_zreza.png" class="berrie_table"><br> Zreza</td><td>3 semillas picantes <img src="picante.png" class="seed_table"></td><td>Cura la paralisis <hr color="#C30900"> Farmeo de semillas picantes</td><td rowspan="5">16 hrs</td><td rowspan="5">2 - 6</td></tr><tr><td><img src="baya_atania.png" class="berrie_table"><br> Atania</td><td>3 semillas secas <img src="seca.png" class="seed_table"></td><td>Despierta al Pok&eacute;mon <hr color="#C30900"> Farmeo de semillas secas</td></tr><tr><td><img src="baya_meloc.png" class="berrie_table"><br> Meloc</td><td>3 semillas dulces <img src="dulce.png" class="seed_table"></td><td>Cura el envenenamiento <hr color="#C30900"> Farmeo de semillas dulces</td></tr><tr><td><img src="baya_safre.png" class="berrie_table"><br> Safre</td><td>3 semillas amargas <img src="amarga.png" class="seed_table"></td><td>Cura las quemaduras <hr color="#C30900"> Farmeo de semillas amargas</td></tr><tr><td><img src="baya_perasi.png" class="berrie_table"><br> Perasi</td><td>3 semillas &aacute;cidas <img src="acida.png" class="seed_table"></td><td>Cura el congelamiento <hr color="#C30900"> Farmeo de semillas &aacute;cidas</td></tr>' + '<tr><td><img src="baya_grana.png" class="berrie_table"><br> Grana</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla amarga  <img src="amarga.png" class="seed_table"><br>+ 1 semilla muy picante <img src="muy_picante.png" class="seed_table"></td><td>Resta 10 Ev´s de PS <hr color="#C30900"> Aumenta la felicidad</td><td rowspan="6">44 hrs</td><td rowspan="6">7 - 9</td></tr><tr><td><img src="baya_algama.png" class="berrie_table"><br> Algama</td><td>1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla &aacute;cida <img src="acida.png" class="seed_table"><br>+ 1 semilla muy seca <img src="muy_seca.png" class="seed_table"></td><td>Resta 10 Ev´s de Atk <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_ispero.png" class="berrie_table"><br> Ispero</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla muy dulce <img src="muy_dulce.png" class="seed_table"></td><td>Resta 10 Ev´s de Def <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_meluce.png" class="berrie_table"><br> Meluce</td><td>1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla amarga <img src="amarga.png" class="seed_table"><br>+ 1 semilla muy amarga <img src="muy_amarga.png" class="seed_table"> </td><td>Resta 10 Ev´s de Sp. Atk <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_uvav.png" class="berrie_table"><br> Uvav</td><td>1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla &aacute;cida <img src="acida.png" class="seed_table"><br>+ 1 semilla muy &aacute;cida <img src="muy_acida.png" class="seed_table"></td><td>Resta 10 Ev´s de Sp. Def <hr color="#C30900"> Aumenta la felicidad</td></tr><tr><td><img src="baya_tamate.png" class="berrie_table"><br> Tamate</td><td>1 semilla picante <img src="picante.png" class="seed_table"><br>+ 1 semilla seca <img src="seca.png" class="seed_table"><br>+ 1 semilla muy picante <img src="muy_picante.png" class="seed_table"></td><td>Resta 10 Ev´s de Velocidad <hr color="#C30900"> Aumenta la felicidad</td></tr>' + '<tr><td><img src="baya_zanama.png" class="berrie_table"> Zanama</td><td>1 semilla muy picante <img src="picante.png" class="seed_table"><br>+ 1 semilla dulce <img src="dulce.png" class="seed_table"><br>+ 1 semilla amarga <img src="amarga.png" class="seed_table"></td><td>Restaura 10 PP de un movimiento</td><td>20 hrs</td><td>5 - 7</td></tr>';
-
-        var time = document.getElementById('baya_crecimiento');
+        table.innerHTML = table_complete;
         time.innerHTML = '';
+        uso_baya.innerHTML = '';
+        baya_lista.innerHTML = '';
+        baya_calc.style.display = 'none';
 
-        var usage = document.getElementById('uso_baya');
-        usage.innerHTML = '';
-
-        var recolect = document.getElementById('baya_lista');
-        recolect.innerHTML = '';
-
-        img.innerHTML = '';
-
+        table.scrollIntoView({ behavior: 'smooth' });
     }
 
     Cerrar_Ventana();
 }
+//#endregion
 
+//#region Cambiar Color de Celdas en Tabla Selección
 function ChangeColor(a){
     if(a != 'All'){
         var x = a + '_1';
@@ -211,42 +209,25 @@ function ReturnColor(a){
         obj1 = document.getElementById(a);
     }
 
-    switch(a)
-    {
-        case 'Semillas':
-            color = 'rgb(150, 255, 150)';
-        break;
-        
-        case 'Evs':
-            color = 'rgb(255, 150, 150)';
-        break;
-        
-        case 'PPs':
-            color = 'rgb(255, 200, 150)';
-        break;
-
-        case 'All':
-            color = 'rgba(150, 150, 255, 1)';
-            break;
-    }
-
     obj1.className = '';
     obj2.className = '';
 }
+//#endregion
 
+//#region Mostrar/Ocultar Ventana
 function Abrir_Ventana(){
-    var wdn = document.getElementById('Seleccion_bayas');
-    wdn.style.top = '6px';
-    Ocultar_Ventana('block');
+    Cambio_Ventana('flex');
+    setTimeout(function(){
+        wdn.style.top = '0';
+    }, 300);
 }
 
 function Cerrar_Ventana(){
-    var wdn = document.getElementById('Seleccion_bayas');
-    wdn.style.top = '-200%';
-    setTimeout(Ocultar_Ventana, 200, 'none');
+    wdn.style.top = '-100%';
+    setTimeout(Cambio_Ventana, 300, 'none');
 }
 
-function Ocultar_Ventana(opc){
-    var wdn = document.getElementById('Seleccion_bayas');
+function Cambio_Ventana(opc){
     wdn.style.display = opc;
 }
+//#endregion
